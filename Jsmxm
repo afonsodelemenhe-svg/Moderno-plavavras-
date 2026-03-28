@@ -1,0 +1,7 @@
+const ignoredRoles = [
+  "1487150654798561341"
+];
+
+module.exports = function isIgnored(member) {
+  return member.roles.cache.some(role => ignoredRoles.includes(role.id));
+};
