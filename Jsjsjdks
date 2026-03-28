@@ -1,0 +1,20 @@
+const sendDM = require("./dm");
+
+module.exports = async function punish(message) {
+  try {
+    await message.delete();
+
+    await message.channel.send({
+      content: `⚠️ ${message.author}, evita linguagem ofensiva.`
+    });
+
+    // Enviar DM
+    await sendDM(message);
+
+    // Timeout opcional
+    // await message.member.timeout(5000, "Linguagem ofensiva");
+
+  } catch (err) {
+    console.error("Erro ao punir:", err);
+  }
+};
