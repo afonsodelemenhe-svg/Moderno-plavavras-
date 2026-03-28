@@ -1,5 +1,5 @@
 const ignoredRoles = [
-  "1487150654798561341"
+  "1487150580248870963"
 ];
 
 module.exports = function isIgnored(member) {
