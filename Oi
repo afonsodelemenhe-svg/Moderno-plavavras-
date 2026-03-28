@@ -1,0 +1,14 @@
+# 🛡️ Anti-Palavrões Modular (Script 9)
+
+Sistema modular de filtragem de linguagem ofensiva para bots Discord.
+Criado para ser simples, expansível e fácil de integrar em qualquer bot.
+
+## 🚀 Funcionalidades
+- Detecção de palavrões (inclui variações)
+- Apaga mensagens automaticamente
+- Envia aviso ao utilizador
+- Timeout opcional
+- Logs completos num canal dedicado
+- Arquitetura modular
+
+## 📁 Estrutura
