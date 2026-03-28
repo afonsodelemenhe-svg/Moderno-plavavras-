@@ -1,0 +1,25 @@
+# 🤖 Anti-Palavrões IA (Script 9)
+
+Sistema híbrido de moderação:
+- IA para detectar toxicidade
+- Regex inteligente para variações
+- Lista manual para bloqueios fixos
+
+Criado para bots Discord (Discord.js v14, Eris, etc.).
+
+## Funcionalidades
+- Detecção contextual (IA)
+- Detecção de variações (regex)
+- Lista de palavras proibidas
+- Apaga mensagens
+- Timeout opcional
+- Logs completos
+
+## Estrutura
+modules/
+  ai/classifier.js
+  filters/badwords.txt
+  filters/regex.js
+  actions/punish.js
+  actions/logs.js
+index.js
