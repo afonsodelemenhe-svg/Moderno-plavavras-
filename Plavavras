@@ -1,0 +1,15 @@
+anti-palavroes/
+│
+├── README.md
+├── index.js
+│
+├── modules/
+│   ├── filters/
+│   │   ├── badwords.txt
+│   │   └── filter.js
+│   │
+│   └── actions/
+│       ├── punish.js
+│       └── logs.js
+│
+└── package.json
