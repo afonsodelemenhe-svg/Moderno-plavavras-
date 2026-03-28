@@ -1,0 +1,8 @@
+// Cargos que o bot deve ignorar
+const ignoredRoles = [
+  "1487150654798561341" // Cargo que NÃO sofre anti-mensagem
+];
+
+module.exports = function isIgnored(member) {
+  return member.roles.cache.some(role => ignoredRoles.includes(role.id));
+};
