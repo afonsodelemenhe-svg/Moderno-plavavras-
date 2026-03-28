@@ -1,0 +1,15 @@
+module.exports = async function punish(message) {
+  try {
+    await message.delete();
+
+    await message.channel.send({
+      content: `⚠️ ${message.author}, evita linguagem ofensiva.`
+    });
+
+    // Timeout opcional
+    // await message.member.timeout(5000, "Uso de palavrões");
+
+  } catch (err) {
+    console.error("Erro ao aplicar punição:", err);
+  }
+};
