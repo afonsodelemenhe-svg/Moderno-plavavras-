@@ -1,0 +1,18 @@
+anti-palavroes-ia/
+│
+├── README.md
+├── index.js
+│
+├── modules/
+│   ├── ai/
+│   │   └── classifier.js
+│   │
+│   ├── filters/
+│   │   ├── badwords.txt
+│   │   └── regex.js
+│   │
+│   └── actions/
+│       ├── punish.js
+│       └── logs.js
+│
+└── package.json
