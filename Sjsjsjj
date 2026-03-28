@@ -1,0 +1,11 @@
+module.exports = async function sendDM(message) {
+  try {
+    await message.author.send(
+      `⚠️ Olá ${message.author.username},\n\n` +
+      `A tua mensagem no servidor **${message.guild.name}** foi removida por conter linguagem ofensiva.\n` +
+      `Por favor, mantém o respeito e segue as regras.`
+    );
+  } catch (err) {
+    console.error("Não foi possível enviar DM:", err);
+  }
+};
