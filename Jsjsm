@@ -1,0 +1,19 @@
+const fs = require("fs");
+
+const badwords = fs.readFileSync("./modules/filters/badwords.txt", "utf8")
+  .split("\n")
+  .map(w => w.trim().toLowerCase())
+  .filter(Boolean);
+
+function normalize(text) {
+  return text
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .replace(/[^a-zA-Z0-9 ]/g, "")
+    .toLowerCase();
+}
+
+module.exports = function checkBadWords(message) {
+  const content = normalize(message.content);
+  return badwords.some(word => content.includes(word));
+};
