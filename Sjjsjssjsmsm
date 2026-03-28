@@ -1,0 +1,11 @@
+const patterns = [
+  /m[e3]rd[a4]/i,
+  /c[a4]r[a4]lh[o0]/i,
+  /p[u*]t[a4]/i,
+  /fd[pb]/i,
+  /porr[a4]/i
+];
+
+module.exports = function regexCheck(message) {
+  return patterns.some(p => p.test(message.content));
+};
