@@ -1,0 +1,20 @@
+module.exports = function aiClassify(message) {
+  const text = message.content.toLowerCase();
+
+  let score = 0;
+
+  // insultos comuns
+  const insults = ["idiota", "burro", "otario", "lixo", "nojento"];
+  insults.forEach(word => {
+    if (text.includes(word)) score += 2;
+  });
+
+  // agressividade
+  if (text.includes("vai") && text.includes("morrer")) score += 5;
+  if (text.includes("ninguém gosta de ti")) score += 4;
+
+  // caps lock exagerado
+  if (text === text.toUpperCase() && text.length > 6) score += 1;
+
+  return score >= 3; // limiar de toxicidade
+};
