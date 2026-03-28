@@ -1,0 +1,20 @@
+const isIgnored = require("./modules/ignoreRoles");
+const aiClassify = require("./modules/ai/classifier");
+const regexCheck = require("./modules/filters/regex");
+const punish = require("./modules/actions/punish");
+const log = require("./modules/actions/logs");
+
+client.on("messageCreate", async (message) => {
+  if (message.author.bot) return;
+
+  // Ignorar o cargo 1487150654798561341
+  if (isIgnored(message.member)) return;
+
+  const isAI = aiClassify(message);
+  const isRegex = regexCheck(message);
+
+  if (isAI || isRegex) {
+    await punish(message);
+    await log(message, client);
+  }
+});
