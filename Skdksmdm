@@ -1,0 +1,15 @@
+module.exports = async function punish(message) {
+  try {
+    await message.delete();
+
+    await message.channel.send({
+      content: `⚠️ ${message.author}, linguagem ofensiva detectada.`
+    });
+
+    // Timeout opcional
+    // await message.member.timeout(5000, "Linguagem ofensiva");
+
+  } catch (err) {
+    console.error("Erro ao punir:", err);
+  }
+};
