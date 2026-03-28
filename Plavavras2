@@ -1,0 +1,5 @@
+## 🧩 Integração
+Basta importar o módulo no teu bot e chamar no evento `messageCreate`.
+
+## 📜 Licença
+Livre para uso e modificação.
